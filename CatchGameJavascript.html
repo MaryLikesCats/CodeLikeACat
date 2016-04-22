@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+tr { width: 300px; height: 100px }
+td { width: 100px; height: 100px }
+img { width: 100px; height: 100px }
+</style>
+<script>
+function Move() 
+{
+	var changeInterval = 200; // moves image every 200 milliseconds
+	setInterval(moveImgRandomly, changeInterval);
+}
+ 
+function moveImgRandomly ()
+{
+ 
+	var image = document.getElementById('image');
+	var position = Math.floor(Math.random() * 10); // gets a random number for where the image will go
+ 
+	if(position == 1)
+	{
+		document.getElementById("topL").appendChild(image) // move image to top left
+	}
+	else if(position == 2)
+	{
+		document.getElementById("topM").appendChild(image) // move image to top middle
+	}
+	else if(position == 3)
+	{
+		document.getElementById("topL").appendChild(image)
+	}
+	else if(position == 4)
+	{
+		document.getElementById("midL").appendChild(image)
+	}
+	else if(position == 5)
+	{
+		document.getElementById("midM").appendChild(image)
+	}
+	else if(position == 6)
+	{
+		document.getElementById("midR").appendChild(image)
+	}
+	else if(position == 7)
+	{
+		document.getElementById("bottomL").appendChild(image)
+	}
+	else if(position == 8)
+	{
+		document.getElementById("bottomM").appendChild(image)
+	}
+	else if(position == 9)
+	{
+		document.getElementById("bottomR").appendChild(image)
+	}
+ 
+}
+ 
+function imgClick ()
+	{
+		window.alert("Caught!") // window alert pops up if the image is clicked
+	}
+ 
+</script>
+</head>
+
+<body onload="Move()">
+<table border="0">
+ <tr>
+<td id="topL"></td>
+<td id="topM"></td>
+<td id="topR"><img id="image" src="http://vignette1.wikia.nocookie.net/yugioh/images/0/0c/TimeWizard-TF04-JP-VG.jpg/revision/latest?cb=20120922211933" onclick="imgClick()";></td>
+ </tr>
+ 
+ <tr>
+<td id="midL"></td>
+<td id="midM"></td>
+<td id="midR"></td>
+ </tr>
+ 
+ <tr>
+<td id="bottomL"></td>
+<td id="bottomM"></td>
+<td id="bottomR"></td>
+ </tr>
+ 
+</table>
+</body>
+</html>
